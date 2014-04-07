@@ -6,11 +6,10 @@ article {
     padding-top: 2em;
     padding-bottom: 1em;
     margin-bottom: 1em;
-    background: $img-border bottom left repeat-x;
     h1 {
       margin: 0;
       a { text-decoration: none;
-        &:hover { text-decoration: underline; } }
+        &:hover { text-decoration: none; } }
     }
     p {
       font-size: .9em;
@@ -25,12 +24,10 @@ article {
     @media only screen and (min-width: 768px) {
       margin-bottom: 1.5em;
       padding-bottom: 1em;
-      background: $img-border bottom left repeat-x;
     }
   }
   h2 {
     padding-top: 0.8em;
-    background: $img-border top left repeat-x;
   }
   .entry-content & h2:first-child, header + h2 { padding-top: 0; }
   h2:first-child, header + h2 { background: none; }
@@ -38,7 +35,6 @@ article {
     padding-top: .5em;
     margin-bottom: 1em;
     padding-bottom: 1em;
-    background: $img-border bottom left repeat-x;
     font-size: 2.0em; font-style: italic;
     line-height: 1.3em;
   }
@@ -98,6 +94,7 @@ article + article {
   a[rel=full-article] {
     background: darken($main-bg, 5);
     display: inline-block;
+    float: right;
     padding: .4em .8em;
     margin-right: .5em;
     text-decoration: none;
@@ -113,6 +110,7 @@ article + article {
   footer {
     @extend .sans;
     margin-top: 1em;
+    margin-bottom: 2em;
   }
 }
 

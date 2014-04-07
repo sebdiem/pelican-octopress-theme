@@ -1,0 +1,19 @@
+#!/bin/bash
+# This script takes an input file with couples original->translation separated
+# by the two characters '->' and replaces the original by the translation in
+# all the templates of the theme.
+# MAC OSX only, the script needs to be adapted to linux.
+
+FILENAME=$1
+while read LINE
+do
+    ENGLISH=$(echo $LINE | awk -F "->" '{ print $1 }')
+    TRANS=$(echo $LINE | awk -F "->" '{ print $2 }')
+    MOD_FILE=$(grep -r "$ENGLISH" templates | cut -d ":" -f 1)
+    if [ -n "$MOD_FILE" ]; then
+        echo "Modified: '$ENGLISH' > '$TRANS' in file $MOD_FILE"
+        sed -i '' -e "s/$ENGLISH/$TRANS/g" $MOD_FILE 
+    else
+        echo "No occurence of '$ENGLISH' found"
+    fi
+done < $FILENAME

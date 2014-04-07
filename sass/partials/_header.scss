@@ -15,4 +15,7 @@ body > header {
     color: $subtitle-color;
     font-weight: normal;
   }
+  span {
+    color: $link-color-hover;
+  }
 }

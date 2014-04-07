@@ -1,10 +1,10 @@
 <div class="pagination">
   {% if articles_page.has_next() %}
-    <a class="prev" href="{{ SITEURL }}/{{ articles_next_page.url }}">&larr; Older</a>
+    <a class="prev" href="{{ SITEURL }}/{{ articles_next_page.url }}">&larr; Plus ancien</a>
   {% endif %}
 
   {% if articles_page.has_previous() %}
-    <a class="next" href="{{ SITEURL }}/{{ articles_previous_page.url }}">Newer &rarr;</a>
+    <a class="next" href="{{ SITEURL }}/{{ articles_previous_page.url }}">Plus récent &rarr;</a>
   {% endif %}
   <br />
 </div>
